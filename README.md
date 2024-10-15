@@ -111,13 +111,13 @@ import 'magniview/dist/magniview-min.css';
 ### **Gallery Example / Galeri Örneği**
 
 ```html
-<div data-gallery="galleryExamp" data-magniview="">
+<div data-magniview="galleryExamp">
     <img src="image1.jpg" alt="">
 </div>
-<div data-gallery="galleryExamp" data-magniview="">
+<div data-magniview="galleryExamp">
     <img src="image2.jpg" alt="">
 </div>
-<div data-gallery="galleryExamp" data-magniview="">
+<div data-magniview="galleryExamp">
     <img src="image3.jpg" alt="">
 </div>
 ```
