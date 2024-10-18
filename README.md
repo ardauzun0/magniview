@@ -1,61 +1,60 @@
+
 # Magniview
 
-**Magniview** is a lightweight JavaScript lightbox library that provides zoom, fullscreen, gallery support, and more. With a user-friendly interface, it ensures a modern and captivating display of images. It is easy to integrate and performance-focused, offering high-quality and smooth visual experiences in your projects.
-
-**Magniview**, resimlere yakınlaştırma, tam ekran, galeri desteği ve daha fazlasını sağlayan hafif bir JavaScript lightbox kütüphanesidir. Kullanıcı dostu arayüzüyle görsellerin modern ve etkileyici bir şekilde sergilenmesini sağlar. Entegrasyonu kolaydır ve performans odaklıdır, bu yüzden projelerinizde yüksek kalite ve akıcı görsel deneyimler sunar.
+**Magniview** is a lightweight JavaScript lightbox library that provides zoom, fullscreen, gallery support, and more. With a user-friendly interface, it ensures a modern and captivating display of images and videos. It is easy to integrate and performance-focused, offering high-quality and smooth visual experiences in your projects.
 
 ---
 
-## **Features / Özellikler**
+## Features
 
-- **Image Zooming:**  
-  Users can zoom in and out on images to examine them in detail.
+- **Image and Video Zooming:**  
+  Users can zoom in and out on both images and videos to examine them in detail.
 
-- **Galeri desteği / Gallery Support:**  
-  Displays multiple images within a gallery with next/previous navigation support.
+- **Gallery Support:**  
+  Displays multiple images and videos within a gallery with next/previous navigation support.
 
-- **Image Download Support / Resim indirme desteği:**  
-  Users can easily download images to their devices.
+- **Image and Video Download Support:**  
+  Users can easily download both images and videos to their devices.
 
-- **Fullscreen Mode / Tam Ekran Modu:**  
-  Allows users to view images in fullscreen for a better viewing experience.
+- **Fullscreen Mode:**  
+  Allows users to view images and videos in fullscreen for a better viewing experience.
 
-- **Animated Transitions / Animasyonlu Geçişler:**  
-  Provides smooth transitions between images, giving a professional appearance.
+- **Animated Transitions:**  
+  Provides smooth transitions between images and videos, giving a professional appearance.
 
-- **Minimal and Performance-Focused / Minimal ve Performans Odaklı:**  
+- **Minimal and Performance-Focused:**  
   Fast loading times thanks to its lightweight design.
 
-- **Customizable Interface / Özelleştirilebilir Arayüz:**  
+- **Customizable Interface:**  
   Easily adaptable for quick integration into your projects.
 
 ---
 
-## **Why Magniview? / Neden Magniview?**
+## Why Magniview?
 
-- **Enhanced Visual Experience / Gelişmiş Görsel Deneyimi:**  
-  Allows users to explore images in detail.
+- **Enhanced Visual Experience:**  
+  Allows users to explore images and videos in detail.
 
-- **Lightweight and Fast / Hafif ve Performanslı:**  
+- **Lightweight and Fast:**  
   Provides modern functionality without bulky libraries.
 
-- **Easy Integration / Kolay Entegrasyon:**  
+- **Easy Integration:**  
   Quick setup and seamless integration into projects.
 
-- **User-Friendly Navigation / Kullanıcı Dostu Navigasyon:**  
+- **User-Friendly Navigation:**  
   Improves user experience with gallery and transition animations.
 
 ---
 
-## **Installation / Kurulum**
+## Installation
 
-### **With NPM / NPM ile Kurulum**
+### With NPM
 
 ```bash
 npm install magniview
 ```
 
-### **With Yarn / Yarn ile Kurulum**
+### With Yarn
 
 ```bash
 yarn add magniview
@@ -63,33 +62,25 @@ yarn add magniview
 
 ---
 
-## **Usage / Kullanım**
+## Usage
 
 After installing the package, import the **JavaScript** and **CSS** files into your project:
 
-Paket kurulumundan sonra, proje içine **JavaScript** ve **CSS** dosyalarını şu şekilde dahil edin:
+### JavaScript and CSS Imports
 
-### **JavaScript and CSS Imports / JavaScript ve CSS Dosyalarını Dahil Etme**
-
-#### **Option 1 / Seçenek 1**  
+#### Option 1  
 Add the JavaScript to your project’s footer and CSS inside your main CSS file:
-
-Footer’a ekleyin:
 
 ```html
 <script src="../../node_modules/magniview/dist/magniview-min.js"></script>
 ```
 
-CSS dosyanıza ekleyin:
-
 ```css
 @import '../../node_modules/magniview/dist/magniview-min.css';
 ```
 
-#### **Option 2 / Seçenek 2**  
+#### Option 2  
 Alternatively, import the files directly in your JavaScript module:
-
-Alternatif olarak, dosyaları JavaScript modülünüze şu şekilde import edebilirsiniz:
 
 ```javascript
 import 'magniview/dist/magniview-min.js';
@@ -98,24 +89,31 @@ import 'magniview/dist/magniview-min.css';
 
 ---
 
-## **Examples / Örnekler**
+## Examples
 
-### **Single Image Example / Tek Görsel Örneği**
+### Single Image & Video Example
 
 ```html
 <div data-magniview="">
     <img src="example-image.jpg" alt="">
 </div>
+<div data-magniview="">
+    <video>
+        <source src="example-video.mp4">
+    </video>
+</div>
 ```
 
-### **Gallery Example / Galeri Örneği**
+### Gallery & Video Example
 
 ```html
 <div data-magniview="galleryExamp">
     <img src="image1.jpg" alt="">
 </div>
 <div data-magniview="galleryExamp">
-    <img src="image2.jpg" alt="">
+    <video>
+        <source src="example-video.mp4">
+    </video>
 </div>
 <div data-magniview="galleryExamp">
     <img src="image3.jpg" alt="">
@@ -124,8 +122,6 @@ import 'magniview/dist/magniview-min.css';
 
 ---
 
-## **Conclusion / Sonuç**
+## Conclusion
 
-With its fast, customizable, and user-friendly structure, **Magniview** ensures a professional image display solution in your projects.
-
-**Magniview**, hızlı, özelleştirilebilir ve kullanıcı dostu yapısıyla projelerinizde profesyonel bir görsel sunum çözümü sunar.
+With its fast, customizable, and user-friendly structure, **Magniview** ensures a professional image and video display solution in your projects.

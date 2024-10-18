@@ -1,0 +1,11 @@
+Copyright © 2024 Arda Uzun
+
+This software is a library that allows users to zoom in on images and videos, switch to fullscreen mode, and navigate within a gallery. It is provided under the following terms:
+
+Permitted Usage: This software may be used, copied, modified, and distributed for both commercial and non-commercial purposes.
+
+Attribution Requirement: Any copy or distribution of this software must retain the original copyright notice and permission, clearly acknowledging the original developer (Arda Uzun).
+
+No Ownership Claim: You may not claim this software as your own work or sell it under your name.
+
+Non-Exclusive Rights: You are allowed to use, modify, or distribute the software, but others hold the same rights to do so.

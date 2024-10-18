@@ -1,0 +1,263 @@
+.magniview,
+.magniview-close-area {
+    -webkit-user-select: none;
+    user-select: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.magniview.active,
+.magniview.active .magniview-image img,
+.magniview.active .magniview-video video {
+    pointer-events: auto;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.magniview,
+.mini-item {
+    transition-duration: 350ms;
+}
+
+.magniview-image img,
+.magniview-video video {
+    transition-duration: 350ms;
+}
+
+.mini-item img,
+.mini-item video {
+    object-fit: cover;
+    object-position: center;
+}
+
+.magniview {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999999999;
+    opacity: 0;
+}
+
+.magniview.active {
+    opacity: 1;
+}
+
+.magniview-close-area {
+    position: absolute;
+}
+
+.magniview-tools-field {
+    position: absolute;
+    top: 48px;
+    right: 40px;
+    background-color: #fff;
+    padding: 16px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 16px;
+}
+
+.magniview-rotate-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.magniview-close,
+.magniview-download,
+.magniview-fullscreen,
+.magniview-in-image,
+.magniview-rotate-counter,
+.magniview-rotate-clockwise,
+.magniview-out-image {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.magniview-next-button,
+.magniview-prev-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: none;
+    cursor: pointer;
+    z-index: 999999999999999999999999;
+}
+
+.magniview-prev-button {
+    left: 40px;
+    justify-content: center;
+    align-items: center;
+    transition: left 0.5s ease;
+}
+
+.magniview-next-button {
+    right: 40px;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.5s ease;
+}
+
+.magniview-next-button:hover {
+    right: 35px;
+}
+
+.magniview-prev-button:hover {
+    left: 35px;
+}
+
+.magniview-next-button.hidden,
+.magniview-prev-button.hidden {
+    display: none !important;
+}
+
+.magniview-image,
+.magniview-video {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 1420px;
+    max-height: 600px;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    z-index: 2;
+    overflow: hidden;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.magniview-image img,
+.magniview-video video {
+    width: auto;
+    height: inherit;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.magniview-gallery-list {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mini-item {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    transform: translateY(0);
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    overflow: hidden;
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+
+.mini-item.active {
+    width: 150px;
+}
+
+.mini-item img,
+.mini-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.magniview-preloader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top-color: #333;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width:1440px) {
+    .magniview-image,
+    .magniview-video {
+        max-height: 300px;
+        max-width: calc(100% - 200px);
+    }
+
+    .magniview-prev-button {
+        left: 20px;
+    }
+
+    .magniview-prev-button:hover {
+        left: 15px;
+    }
+
+    .magniview-next-button {
+        right: 20px;
+    }
+
+    .magniview-next-button:hover {
+        right: 15px;
+    }
+}
+
+@media (max-width:1024px) {
+    .magniview-image,
+    .magniview-video {
+        max-height: 300px;
+        max-width: calc(100% - 80px);
+    }
+
+    .magniview-gallery-list {
+        max-width: calc(100% - 20px);
+        overflow: hidden;
+        bottom: 60px;
+    }
+
+    .mini-item.active {
+        transform: translateY(-4px);
+    }
+}

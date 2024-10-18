@@ -10,7 +10,8 @@
 
 <body>
     <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; ">
-        <!-- Index'i alınmaması gereken "magniview-img" ler çünkü data-gallery attr sahip değiller -->
+
+        <!-- Image Module -->
         <div data-magniview="">
             <img src="https://cdn.pixabay.com/photo/2024/02/09/23/44/frangipani-8563905_1280.jpg" alt="" style="width:100%; height: 250px; object-fit: cover; object-position: center; margin-left: auto; margin-right: auto;">
         </div>
@@ -24,6 +25,7 @@
             <img src="https://cdn.pixabay.com/photo/2023/04/20/12/22/globe-7939725_1280.jpg" alt="" style="width:100%; height: 250px; object-fit: cover; object-position: center; margin-left: auto; margin-right: auto;">
         </div>
 
+        <!-- Gallery Module -->
         <div data-magniview="heroGallery">
             <img src="https://cdn.pixabay.com/photo/2023/12/13/23/11/plumeria-8447941_1280.jpg" alt="" style="width:100%; height: 250px; object-fit: cover; object-position: center; margin-left: auto; margin-right: auto;">
         </div>
@@ -37,6 +39,7 @@
             <img src="https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg" alt="" style="width:100%; height: 250px; object-fit: cover; object-position: center; margin-left: auto; margin-right: auto;">
         </div>
 
+        <!-- Gallery Module 2 -->
         <div data-magniview="secondGallery">
             <img src="https://cdn.pixabay.com/photo/2023/04/20/12/22/globe-7939725_1280.jpg" alt="" style="width:100%; height: 250px; object-fit: cover; object-position: center; margin-left: auto; margin-right: auto;">
         </div>
@@ -49,8 +52,28 @@
         <div data-magniview="secondGallery">
             <img src="https://cdn.pixabay.com/photo/2024/01/04/16/25/reservoir-8487798_1280.jpg" alt="" style="width:100%; height: 250px; object-fit: cover; object-position: center; margin-left: auto; margin-right: auto;">
         </div>
+
+        <!-- Video Image Gallery Module -->
+        <div data-magniview="videoGallery">
+            <video style="width:100%; height: 250px; object-fit: cover; object-position: center; margin-left: auto; margin-right: auto;">
+                <source src="https://assets.mixkit.co/videos/52440/52440-720.mp4">
+            </video>
+        </div>
+        <div data-magniview="videoGallery">
+            <video style="width:100%; height: 250px; object-fit: cover; object-position: center; margin-left: auto; margin-right: auto;">
+                <source src="https://assets.mixkit.co/active_storage/video_items/99928/1717719927/99928-video-720.mp4">
+            </video>
+        </div>
+        <div data-magniview="videoGallery">
+            <img src="https://cdn.pixabay.com/photo/2020/11/02/13/24/autumn-colours-5706651_1280.jpg" alt="" style="width:100%; height: 250px; object-fit: cover; object-position: center; margin-left: auto; margin-right: auto;">
+        </div>
+        <div data-magniview="">
+            <video style="width:100%; height: 250px; object-fit: cover; object-position: center; margin-left: auto; margin-right: auto;">
+                <source src="https://assets.mixkit.co/videos/52434/52434-720.mp4">
+            </video>
+        </div>
     </div>
 </body>
-<script src="./src/main.js"></script>
+<script type="module" src="./src/main.js"></script>
 
 </html>
