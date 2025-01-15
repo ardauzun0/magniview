@@ -1,6 +1,6 @@
 {
     "name": "magniview",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "description": "A lightweight JavaScript library for interactive image lightboxes with zoom and gallery support.",
     "main": "dist/magniview.min.js",
     "files": [
