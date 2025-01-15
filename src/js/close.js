@@ -7,15 +7,20 @@ export function closeImageBox() {
     const body = getBody();
 
     setTimeout(() => {
-
         magniviewImagesBox.classList.remove('active');
         body.style.overflow = 'auto';
 
         const videoElement = controls.magniviewVideo.querySelector('video');
-        if (videoElement.style.display === 'flex') {
+        if (videoElement && videoElement.style.display === 'flex') {
             videoElement.pause();
             videoElement.currentTime = 0;
         }
+
+        // YouTube iframe'i temizle
+        if (controls.magniviewYoutube) {
+            controls.magniviewYoutube.innerHTML = '';
+        }
+
         resetView();
 
         if (document.fullscreenElement) {

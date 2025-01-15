@@ -1,14 +1,39 @@
 import { getCurrentGalleryItems, getCurrentImageIndex, controls } from './variable.js';
 import { showPreloader, hidePreloader } from './preloader.js';
 
-// Update the box with the current media (image or video)
+// Update the box with the current media (image or video or youtube)
 export function updateBoxImage() {
     const currentGalleryItems = getCurrentGalleryItems();
     const currentImageIndex = getCurrentImageIndex();
 
     if (currentGalleryItems && currentGalleryItems.length > 0) {
-        const mediaElement = currentGalleryItems[currentImageIndex].querySelector('img') || currentGalleryItems[currentImageIndex].querySelector('video');
-        const mediaSrc = getMediaSrc(mediaElement);  
+        const currentItem = currentGalleryItems[currentImageIndex];
+        const youtubeId = currentItem.getAttribute('data-youtube');
+
+        if (youtubeId && youtubeId.length === 11 && /^[a-zA-Z0-9_-]{11}$/.test(youtubeId)) {
+            showPreloader();
+            controls.magniviewImage.style.display = 'none';
+            controls.magniviewVideo.style.display = 'none';
+            controls.magniviewYoutube.style.display = 'flex';
+
+            controls.magniviewYoutube.innerHTML = `
+                <iframe 
+                    width="1280" 
+                    height="720" 
+                    src="https://www.youtube.com/embed/${youtubeId}?autoplay=1" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>`;
+            hidePreloader();
+            // YouTube durumunda da active class'ı güncelle
+            updateActiveThumbnailNew();
+            return;
+        }
+
+        controls.magniviewYoutube.style.display = 'none';
+        const mediaElement = currentItem.querySelector('img') || currentItem.querySelector('video');
+        const mediaSrc = getMediaSrc(mediaElement);
 
         showPreloader();
         applyImageTransition(mediaSrc);
@@ -28,15 +53,17 @@ export function getMediaSrc(item) {
 
 // Update the active thumbnail based on the currently displayed image or video
 export function updateActiveThumbnailNew(currentSrc) {
-    const thumbnails = document.querySelectorAll('.mini-item img, .mini-item video');
+    const thumbnails = document.querySelectorAll('.mini-item');
+    const currentGalleryItems = getCurrentGalleryItems();
+    const currentImageIndex = getCurrentImageIndex();
+    const currentItem = currentGalleryItems[currentImageIndex];
 
-    thumbnails.forEach((thumbnail) => {
-        const parentDiv = thumbnail.parentElement;
-
-        const thumbnailSrc = thumbnail.tagName.toLowerCase() === 'img' ? thumbnail.src : thumbnail.querySelector('source').src;
-        const isActive = thumbnailSrc === currentSrc; 
-
-        parentDiv.classList.toggle('active', isActive);
+    thumbnails.forEach((thumbnail, index) => {
+        thumbnail.classList.remove('active');
+        
+        if (index === currentImageIndex) {
+            thumbnail.classList.add('active');
+        }
     });
 }
 
@@ -47,7 +74,7 @@ export function applyImageTransition(mediaSrc) {
 
     if (!currentGalleryItems || currentGalleryItems.length === 0) return;
 
-    showPreloader(); 
+    showPreloader();
 
     controls.magniviewImage.style.transition = controls.magniviewVideo.style.transition = 'opacity 0.5s, transform 0.5s';
     controls.magniviewImage.style.opacity = controls.magniviewVideo.style.opacity = "0";
@@ -79,21 +106,21 @@ export function applyImageTransition(mediaSrc) {
             const videoElement = controls.magniviewVideo.querySelector('video');
             const sourceElement = controls.magniviewVideo.querySelector('source');
             sourceElement.src = mediaSrc;
-            videoElement.load(); 
+            videoElement.load();
             controls.magniviewImage.style.display = 'none';
             controls.magniviewVideo.style.display = 'flex';
 
             videoElement.loop = true;
-            videoElement.play(); 
+            videoElement.play();
 
             videoElement.onloadeddata = () => {
                 setTimeout(() => {
-                    hidePreloader(); 
+                    hidePreloader();
                 }, 50);
                 controls.magniviewVideo.style.opacity = "1";
                 controls.magniviewVideo.style.transform = "scale(1)";
             };
-            
+
             videoElement.onerror = () => {
                 hidePreloader();
             };

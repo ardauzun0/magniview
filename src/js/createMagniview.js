@@ -6,25 +6,26 @@ export function createMagniviewHTML() {
   magniviewImagesBox.innerHTML = `
       <div class="magniview-close-area"></div>
       <div class="magniview-tools-field">
-         ${createButton('magniview-fullscreen', toggleFullScreen())}
-         <div class="magniview-rotate-field">
-            ${createButton('magniview-rotate-counter', rotateSVG(false))}
-            ${createButton('magniview-rotate-clockwise', rotateSVG(true))}
-         </div>
-         ${createButton('magniview-in-image', zoomInSVG())}
-         ${createButton('magniview-out-image', zoomOutSVG())}
-         ${createButton('magniview-download', downloadImageSVG())}
-         ${createButton('magniview-close', closeSVG())}
+          ${createButton('magniview-fullscreen', toggleFullScreen())}
+          <div class="magniview-rotate-field">
+              ${createButton('magniview-rotate-counter', rotateSVG(false))}
+              ${createButton('magniview-rotate-clockwise', rotateSVG(true))}
+          </div>
+          ${createButton('magniview-in-image', zoomInSVG())}
+          ${createButton('magniview-out-image', zoomOutSVG())}
+          ${createButton('magniview-download', downloadImageSVG())}
+          ${createButton('magniview-close', closeSVG())}
       </div>
       ${createArrowButton('magniview-prev-button', showPreviousImage())}
       ${createArrowButton('magniview-next-button', showNextImage())}
       <div class="magniview-image"><img src="" alt=""></div>
       <div class="magniview-video"><video><source src=""></video></div>
+      <div class="magniview-youtube"></div>
       <div class="magniview-gallery-list"></div>
   `;
   document.body.appendChild(magniviewImagesBox);
 
-  setMagniviewImagesBox(magniviewImagesBox); 
+  setMagniviewImagesBox(magniviewImagesBox);
 }
 
 function toggleFullScreen() {

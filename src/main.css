@@ -184,6 +184,7 @@
 
 .mini-item.active {
     width: 150px;
+    pointer-events: none;
 }
 
 .mini-item img,
@@ -221,6 +222,7 @@
 }
 
 @media (max-width:1440px) {
+
     .magniview-image,
     .magniview-video {
         max-height: 300px;
@@ -245,6 +247,7 @@
 }
 
 @media (max-width:1024px) {
+
     .magniview-image,
     .magniview-video {
         max-height: 300px;
@@ -252,12 +255,33 @@
     }
 
     .magniview-gallery-list {
-        max-width: calc(100% - 20px);
-        overflow: hidden;
+        max-width: calc(100% - 90px);
+        overflow-y: hidden;
+        overflow-x: auto;
         bottom: 60px;
+        justify-content: normal;
+    }
+
+    .mini-item {
+        min-width: 70px;
+        height: 70px;
+        transition: min-width 0.5s ease;
     }
 
     .mini-item.active {
-        transform: translateY(-4px);
+        transform: translateY(0);
+        min-width: 120px;
+    }
+
+    .magniview-tools-field {
+        top: 32px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: fit-content;
+    }
+
+    .magniview-youtube {
+        width: 100%;
+        height: 100%;
     }
 }

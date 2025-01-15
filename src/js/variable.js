@@ -63,6 +63,7 @@ export function cacheControls() {
   controls.boxImage = controls.magniviewImage ? controls.magniviewImage.querySelector('img') : null;
   controls.magniviewVideo = querySelector('.magniview-video');
   controls.video = controls.magniviewVideo ? controls.magniviewVideo.querySelector('video') : null;
+  controls.magniviewYoutube = querySelector('.magniview-youtube');
   controls.closeArea = querySelector('.magniview-close-area');
   controls.fullScreenButton = querySelector('.magniview-fullscreen');
   controls.zoomInButton = querySelector('.magniview-in-image');

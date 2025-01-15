@@ -120,6 +120,11 @@ import 'magniview/dist/magniview-min.css';
 </div>
 ```
 
+### Youtube Example
+<div data-magniview="" data-youtube="YtSECdCxgNI">
+    <img src="image3.jpg" alt="">
+</div>
+
 ---
 
 ## Conclusion
