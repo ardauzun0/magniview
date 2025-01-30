@@ -223,6 +223,13 @@
 
 @media (max-width:1440px) {
 
+    .magniview{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
     .magniview-image,
     .magniview-video {
         max-height: 300px;
@@ -263,20 +270,26 @@
     }
 
     .mini-item {
-        min-width: 70px;
-        height: 70px;
+        min-width: 60px;
+        height: 60px;
         transition: min-width 0.5s ease;
     }
 
     .mini-item.active {
-        transform: translateY(0);
-        min-width: 120px;
+        transform: translateY(0) !important;
+        min-width: 100px;
     }
 
     .magniview-tools-field {
-        top: 32px;
-        left: 50%;
-        transform: translateX(-50%);
+        top: 30px !important;
+        left: 0px !important;
+        right: 0px !important;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
         width: fit-content;
     }
 

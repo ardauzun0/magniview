@@ -10,10 +10,12 @@ export function closeImageBox() {
         magniviewImagesBox.classList.remove('active');
         body.style.overflow = 'auto';
 
+        // Video elementini durdur ve sıfırla
         const videoElement = controls.magniviewVideo.querySelector('video');
-        if (videoElement && videoElement.style.display === 'flex') {
+        if (videoElement) {
             videoElement.pause();
             videoElement.currentTime = 0;
+            videoElement.loop = false;
         }
 
         // YouTube iframe'i temizle
@@ -35,6 +37,7 @@ export function resetView() {
 
     controls.magniviewImage.style.display = 'flex';
     controls.magniviewVideo.style.display = 'none';
+    controls.magniviewYoutube.style.display = 'none';
 
     clearGalleryList();
     hidePreloader();
