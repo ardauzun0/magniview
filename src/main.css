@@ -298,3 +298,28 @@
         height: 100%;
     }
 }
+
+.magniview-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-align: center;
+    background: rgba(0,0,0,0.7);
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    max-width: 80%;
+    backdrop-filter: blur(5px);
+}
+
+/* Mobil stiller */
+@media (max-width: 768px) {
+    .magniview-caption {
+        bottom: 10px;
+        font-size: 12px;
+        max-width: 80%;
+        width: 100%;
+    }
+}

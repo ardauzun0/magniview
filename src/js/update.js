@@ -1,4 +1,4 @@
-import { getCurrentGalleryItems, getCurrentImageIndex, controls } from './variable.js';
+import { getCurrentGalleryItems, getCurrentImageIndex, controls,getMagniviewImagesBox } from './variable.js';
 import { showPreloader, hidePreloader } from './preloader.js';
 
 // Update the box with the current media (image or video or youtube)
@@ -9,6 +9,25 @@ export function updateBoxImage() {
     if (currentGalleryItems && currentGalleryItems.length > 0) {
         const currentItem = currentGalleryItems[currentImageIndex];
         const youtubeId = currentItem.getAttribute('data-youtube');
+
+        const magniviewImagesBox = getMagniviewImagesBox();
+        const captionElement = magniviewImagesBox.querySelector('.magniview-caption');
+        const imgElement = currentItem.querySelector('img');
+        const videoElement = currentItem.querySelector('video');
+
+        let ariaLabel = null;
+        if (imgElement) {
+            ariaLabel = imgElement.getAttribute('aria-label');
+        } else if (videoElement) {
+            ariaLabel = videoElement.getAttribute('aria-label');
+        }
+
+        if (ariaLabel) {
+            captionElement.textContent = ariaLabel;
+            captionElement.style.display = 'block';
+        } else {
+            captionElement.style.display = 'none';
+        }
 
         if (youtubeId && youtubeId.length === 11 && /^[a-zA-Z0-9_-]{11}$/.test(youtubeId)) {
             showPreloader();

@@ -18,7 +18,10 @@ export function createMagniviewHTML() {
       </div>
       ${createArrowButton('magniview-prev-button', showPreviousImage())}
       ${createArrowButton('magniview-next-button', showNextImage())}
-      <div class="magniview-image"><img src="" alt=""></div>
+      <div class="magniview-image">
+        <img src="" alt="">
+        <div class="magniview-caption"></div>
+      </div>
       <div class="magniview-video"><video><source src=""></video></div>
       <div class="magniview-youtube"></div>
       <div class="magniview-gallery-list"></div>
